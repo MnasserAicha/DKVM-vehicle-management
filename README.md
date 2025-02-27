@@ -1,27 +1,52 @@
-# DkvmVehiclesManagement
+# DKVM-vehicle-management
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.12.
+📌 Project Overview
+- A frontend application for vehicles management.
 
+## 🛠 Features
+- Display Vehicles
+- Create new vehicle
+- Display single vehicle
+- User-friendly UI built with Angular Material
+
+## 🛠️ Tech Stack
+- Framework: Angular 17
+- UI Library: Angular Material 
+- Testing: Jest
+
+
+## Prerequisites
+Before running the project, ensure you have the following installed:
+- *Node.js* (Latest LTS recommended) → [Download](https://nodejs.org/)
+- *Angular CLI* (Globally installed)  
+  ```sh
+  npm install -g @angular/cli
+
+## Clone Project
+git clone https://github.com/MnasserAicha/DKVM-vehicle-management.git
+
+
+## Install dependencies:
+```bash
+npm install
+```
 ## Development server
+To start a local development server, run:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+```bash
+ng serve
+```
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. 
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+To execute unit tests with jest test runner, use the following command:
 
-## Running end-to-end tests
+```bash
+ng test
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
