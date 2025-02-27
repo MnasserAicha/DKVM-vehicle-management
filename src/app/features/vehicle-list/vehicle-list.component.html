@@ -1,0 +1,40 @@
+<div class="vehicle-list-container">
+  <div class="vehicle-list-header">
+    <h2>Vehicle List</h2>
+    <button class="button" (click)="openAddVehicleModal()">Add New Vehicle</button>
+  </div>
+
+  <div *ngIf="isloading$ | async" class="loading-spinner">
+    <mat-spinner></mat-spinner>
+    <p>Loading vehicles details...</p>
+  </div>
+
+  <div *ngIf="!(isloading$ | async) && vehicles.length === 0" class="no-vehicles">
+    <img src="assets/images/no-vehicules.webp" alt="No vehicles found" class="no-vehicles-image" />
+    <p>Oops! No vehicles found.</p>
+  </div>
+
+  <div *ngIf="!(isloading$ | async) && displayedVehicles.length > 0" class="vehicle-list">
+    <app-vehicle-card
+      *ngFor="let vehicle of displayedVehicles"
+      [vehicle]="vehicle"
+      (click)="openVehicleDetails(vehicle)"
+    >
+    </app-vehicle-card>
+  </div>
+
+  <div *ngIf="isEmpty" class="no-vehicles-message">
+    <p>No vehicles available. Click "Add Vehicle" to create a new one.</p>
+    <button mat-raised-button color="primary" (click)="openAddVehicleModal()">Add Vehicle</button>
+  </div>
+
+  <mat-paginator
+    *ngIf="!(isloading$ | async) && vehicles.length > pageSize"
+    class="fixed-pagination"
+    [length]="vehicles.length"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="[5, 10, 20]"
+    (page)="handlePageEvent($event)"
+  >
+  </mat-paginator>
+</div>

@@ -1,0 +1,62 @@
+.toast {
+  display: flex;
+  align-items: center;
+  padding: var(--toast-padding);
+  border-radius: var(--toast-border-radius);
+  font-size: var(--toast-font-size);
+  font-weight: bold;
+  box-shadow: var(--toast-shadow);
+  width: auto;
+  max-width: 350px;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.success {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.error {
+  background-color: var(--error-color);
+  color: white;
+}
+
+.toast-icon mat-icon {
+  font-size: var(--icon-size);
+  margin-right: 10px;
+}
+
+.toast-close {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  right: 12px;
+  top: 8px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+}

@@ -1,0 +1,8 @@
+<a [routerLink]="['/vehicle', vehicle.id]" class="vehicle-card">
+  <div class="vehicle-info">
+    <h3>{{ vehicle.name }}</h3>
+    <p><strong>Manufacturer:</strong> {{ vehicle.manufacturer }}</p>
+    <p><strong>Model:</strong> {{ vehicle.model }}</p>
+    <p *ngIf="vehicle.mileage"><strong>Mileage:</strong> {{ vehicle.mileage | number }} km</p>
+  </div>
+</a>

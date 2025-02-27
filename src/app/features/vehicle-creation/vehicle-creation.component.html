@@ -1,0 +1,71 @@
+<h2 mat-dialog-title>Add New Vehicle</h2>
+<form [formGroup]="vehicleForm" (ngSubmit)="submit()">
+  <mat-dialog-content>
+    <mat-form-field appearance="outline">
+      <mat-label>Vehicle Name</mat-label>
+      <input matInput formControlName="name" required />
+      <mat-error *ngIf="vehicleForm.get('name')?.invalid">Name is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Manufacturer</mat-label>
+      <input matInput formControlName="manufacturer" required />
+      <mat-error *ngIf="vehicleForm.get('manufacturer')?.invalid"
+        >Manufacturer is required</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Model</mat-label>
+      <input matInput formControlName="model" required />
+      <mat-error *ngIf="vehicleForm.get('model')?.invalid">Model is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Fuel Type</mat-label>
+      <mat-select formControlName="fuel">
+        <mat-option *ngFor="let fuel of fuelTypes" [value]="fuel">{{ fuel }}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="vehicleForm.get('fuel')?.invalid">Fuel type is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Vehicle Type</mat-label>
+      <input matInput formControlName="type" required />
+      <mat-error *ngIf="vehicleForm.get('type')?.invalid">Type is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>VIN</mat-label>
+      <input matInput formControlName="vin" required minlength="17" />
+
+      <mat-error
+        *ngIf="vehicleForm.get('vin')?.invalid || vehicleForm.get('vin')?.hasError('pattern')"
+      >
+        VIN must be exactly 17 characters and must contain only uppercase letters and numbers.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Color (Optional)</mat-label>
+      <input matInput formControlName="color" />
+      <mat-error *ngIf="vehicleForm.get('color')?.hasError('pattern')">
+        Color should only contain letters and spaces.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Mileage (Optional)</mat-label>
+      <input matInput type="number" formControlName="mileage" />
+    </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button class="button-close" type="button" (click)="close()">Cancel</button>
+    <button class="button" type="submit" [disabled]="vehicleForm.invalid || isSubmitting">
+      <mat-progress-spinner *ngIf="isSubmitting" color="primary" mode="indeterminate" diameter="20">
+      </mat-progress-spinner>
+      <span *ngIf="!isSubmitting">Add Vehicle</span>
+    </button>
+  </mat-dialog-actions>
+</form>

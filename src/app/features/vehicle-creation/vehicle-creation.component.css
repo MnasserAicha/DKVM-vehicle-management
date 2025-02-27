@@ -1,0 +1,21 @@
+mat-form-field {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .vehicle-form-container {
+    max-width: 90vw;
+    padding: 15px;
+  }
+}
+
+:host mat-dialog-title {
+  color: orange !important;
+  background-color: orange;
+}
+
+:host mat-dialog-actions {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem 0;
+}

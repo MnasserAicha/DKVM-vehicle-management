@@ -1,0 +1,147 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;700&display=swap');
+
+@font-face {
+  font-family: 'RedHatDisplay';
+  src:
+    url('assets/fonts/RedHatDisplay-Regular.woff2') format('woff2'),
+    url('assets/fonts/RedHatDisplay-Regular.woff') format('woff'),
+    url('assets/fonts/RedHatDisplay-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: 'RedHatDisplay', Helvetica, Arial, sans-serif !important;
+}
+* {
+  font-family: 'RedHatDisplay', Helvetica, Arial, sans-serif !important;
+}
+
+html,
+body {
+  font-family: 'RedHatDisplay', Helvetica, Arial, sans-serif !important;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+}
+h1,
+h2,
+h3,
+h4 {
+  color: #f18400;
+  font-weight: 700;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f18400;
+  color: white;
+  font-family: 'RedHatDisplay', Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  min-width: 160px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: #da7b0e;
+}
+.button:disabled,
+.button[disabled] {
+  background-color: #ccc;
+  color: #888;
+  cursor: not-allowed;
+  border: 2px solid #bbb;
+  opacity: 0.6;
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+.button:focus {
+  outline: none;
+  border: 2px solid white;
+}
+.button-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(0, 75, 120);
+  font-family: 'RedHatDisplay', Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-color: rgb(0, 75, 120);
+  border-radius: 9999px;
+  cursor: pointer;
+  min-width: 160px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+}
+
+:root {
+  --mdc-dialog-subhead-color: #f18400;
+  --mdc-dialog-subhead-size: 1.25rem;
+  --mdc-dialog-subhead-weight: 700;
+
+  --toast-padding: 16px 24px;
+  --toast-font-size: 16px;
+  --toast-border-radius: 8px;
+  --toast-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  --success-color: #4caf50;
+  --error-color: #f44336;
+  --icon-size: 24px;
+}
+mat-icon {
+  font-family: 'Material Icons' !important;
+  font-size: 24px;
+  vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+.mat-mdc-progress-spinner circle {
+  stroke: #f18400 !important;
+}
+mat-progress-spinner {
+  width: 20px !important;
+  height: 20px !important;
+  stroke: white !important;
+}
+.no-vehicles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 400px;
+  color: #444;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.no-vehicles-image {
+  width: 250px;
+  height: auto;
+  margin-bottom: 15px;
+  opacity: 0.8;
+}

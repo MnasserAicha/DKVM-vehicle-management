@@ -1,0 +1,62 @@
+<div *ngIf="loading; else vehicleContent">
+  <div class="loading-container">
+    <mat-spinner></mat-spinner>
+    <p>Loading vehicle details...</p>
+  </div>
+</div>
+<ng-template #vehicleContent>
+  <div class="vehicle-details-container" *ngIf="vehicle; else noDataFound">
+    <div class="vehicle-header">
+      <h1>{{ vehicle.name }} - {{ vehicle.model }}</h1>
+    </div>
+
+    <div class="layout">
+      <div class="vehicle-info">
+        <h1>Vehicle Details</h1>
+        <div class="details-grid">
+          <div class="info-item">
+            <mat-icon>factory</mat-icon>
+            <span><strong>Manufacturer:</strong> {{ vehicle.manufacturer }}</span>
+          </div>
+          <div class="info-item">
+            <mat-icon>local_gas_station</mat-icon>
+            <span><strong>Fuel Type:</strong> {{ vehicle.fuel }}</span>
+          </div>
+          <div class="info-item">
+            <mat-icon>category</mat-icon>
+            <span><strong>Type:</strong> {{ vehicle.type }}</span>
+          </div>
+          <div class="info-item">
+            <mat-icon>fingerprint</mat-icon>
+            <span><strong>VIN:</strong> {{ vehicle.vin }}</span>
+          </div>
+          <div *ngIf="vehicle.color" class="info-item">
+            <mat-icon>palette</mat-icon>
+            <span><strong>Color:</strong> {{ vehicle.color }}</span>
+          </div>
+          <div *ngIf="vehicle.mileage" class="info-item">
+            <mat-icon>speed</mat-icon>
+            <span><strong>Mileage:</strong> {{ vehicle.mileage | number }} km</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <h3>About This Vehicle</h3>
+        <p>
+          This vehicle is part of our premium fleet, offering high performance and durability. It
+          meets all industry standards and is regularly maintained.
+        </p>
+        <p><strong>Service History:</strong> Regularly serviced and maintained.</p>
+        <p><strong>Warranty:</strong> 3 years manufacturer warranty included.</p>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #noDataFound>
+  <div class="no-vehicles">
+    <img src="assets/images/no-vehicules.webp" alt="No vehicles found" class="no-vehicles-image" />
+    <p>Oops! No vehicle found.</p>
+  </div>
+</ng-template>
